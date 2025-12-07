@@ -103,11 +103,13 @@ body {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
   gap: 1.5rem;
   max-width: 1300px;
   margin: 0 auto;
 }
+
+
 
 .member {
   background-color: rgba(255,255,255,0.95);
@@ -118,6 +120,16 @@ body {
   backdrop-filter: blur(10px);
   border: 2px solid transparent;
 }
+
+
+.member img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
 
 .member:hover {
   transform: translateY(-4px);
@@ -344,6 +356,22 @@ body {
     height: 200px;
   }
 }
+
+
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr; /* 1 per row on small screens */
+  }
+}
+
+
+
 
 /* ====================== UTILITY CLASSES ====================== */
 .text-center {
